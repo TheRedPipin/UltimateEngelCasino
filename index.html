@@ -5,17 +5,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
     <script src="script.js"></script>
-    <title>Document</title>
+    <title>Engel Casino</title>
 </head>
 <body>
     <div id="title">♠Ultimate Engel Casino♠</div>
     <div id="moneyText"></div>
     <div id="griddy">
-        <div class="gameBox" onclick="switchPage('DoubleNothing/index.html')">
+        <div class="gameBox" onclick="switchPage('DoubleNothing/double.html')">
             <img id="logoImage" src="Assets/DoubleNothingLogo.PNG" alt="Double or Nothing">
         </div>
-        <div class="gameBox">
+        <div class="gameBox" onclick="switchPage('MinesGame/Mines.html')">
             <img id="logoImage" src="Assets/MinesLogo.PNG" alt="Mines">
+        </div>
+        <div class="gameBox" onclick="switchPage('KenoGame/index.html')">
+            <img id="logoImage" src="Assets/KenoLogo.PNG" alt="Keno">
+        </div>
+        <div class="gameBox Construct">
+            <div class="constructBanner">Under Construction</div>
+        </div>
+        <div class="gameBox Construct">
+            <div class="constructBanner">Under Construction</div>
         </div>
         <div class="gameBox Construct">
             <div class="constructBanner">Under Construction</div>
@@ -27,5 +36,6 @@
             <div class="constructBanner">Under Construction</div>
         </div>
     </div>
+    <div id="hoverBox"></div>
 </body>
 </html>

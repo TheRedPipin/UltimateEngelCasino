@@ -1,0 +1,105 @@
+/* Reset and base layout */
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fdfdfd;
+  color: #333;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  margin-bottom: 10px;
+  margin-top: -20px;
+  font-size: 10em;
+}
+
+#kenoBoard {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 10px;
+  max-width: 700px;
+  margin: 20px auto;
+}
+
+/* Keno Number Squares */
+.number {
+  background-color: #fff;
+  border: 2px solid #ccc;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  padding: 16px 0;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+  user-select: none;
+  box-shadow: 1px 1px 3px rgba(0,0,0,0.05);
+}
+
+/* Selected by user */
+.number.selected {
+  background-color: #4caf50;
+  border-color: #388e3c;
+  color: #fff;
+}
+
+/* Random drawn */
+.number.drawn {
+  background-color: #ff9800;
+  border-color: #fb8c00;
+  color: #fff;
+  animation: pop 0.25s ease-in-out;
+}
+
+/* Drawn and matched */
+.number.match {
+  background-color: #f44336;
+  border-color: #e53935;
+  color: white;
+  animation: flash 0.4s ease-in-out;
+}
+
+/* Controls */
+button,
+input[type="number"] {
+  margin: 10px 8px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+button {
+  background-color: #1976d2;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+button:hover {
+  background-color: #1565c0;
+}
+
+input[type="number"] {
+  width: 80px;
+  text-align: center;
+}
+
+/* Animation Effects */
+@keyframes pop {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+@keyframes flash {
+  0% { background-color: #f44336; }
+  50% { background-color: #ef5350; }
+  100% { background-color: #f44336; }
+}
+
+.balance {
+  font-size: 2em;
+  margin-bottom: 20px;
+  color: #155263;
+}

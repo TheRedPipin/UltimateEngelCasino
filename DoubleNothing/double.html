@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Double or Nothing</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="double.css">
+</head>
+<body>
+    <div class="container">
+        <div id="gameContent">
+            <h1>🎰 Double or Nothing</h1>
+            <div class="balance">💎 Balance: <span id="balanceText">0</span></div>
+
+            <div class="game">
+                <input type="number" id="wagerInput" placeholder="Enter wager amount" min="1">
+                <button onclick="startGame()">Start</button>
+            </div>
+
+            <div class="game active" id="gameplay" style="display: none;">
+                <p>💰 Current Winnings: <span id="currentWinnings">0</span></p>
+                <button onclick="double()">Double</button>
+                <button onclick="cashout()">Cash Out</button>
+            </div>
+
+            <p id="message" class="message"></p>
+            <a onclick="returnToSender()" class="back">⬅ Back to Casino</a>
+        </div>
+    </div>
+
+    <script src="double.js"></script>
+</body>
+</html>

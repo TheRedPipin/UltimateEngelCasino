@@ -1,0 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    background: radial-gradient(circle at center, #e0f7fa 0%, #ccf2e7 100%);
+    color: #003b4a;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    animation: pop-in 0.6s ease;
+}
+
+@keyframes pop-in {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    color: #2D9CDB;
+}
+
+.balance {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #155263;
+}
+
+input[type="number"] {
+    padding: 10px;
+    font-size: 1em;
+    width: 220px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 2px solid #a0ded0;
+    background-color: #f0fbf9;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: #27AE60;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 1em;
+    margin: 10px 8px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    font-weight: bold;
+    background-color: #2D9CDB;
+    color: #fff;
+    box-shadow: 0 4px 0 #1b6ea8;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background-color: #27AE60;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+.message {
+    margin-top: 20px;
+    font-size: 1.2em;
+    min-height: 40px;
+    transition: all 0.4s ease;
+}
+
+#currentWinnings {
+    font-weight: bold;
+    font-size: 1.5em;
+    color: #27AE60;
+}
+
+.shake {
+    animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-8px); }
+    50% { transform: translateX(8px); }
+    75% { transform: translateX(-8px); }
+    100% { transform: translateX(0); }
+}
+
+
+.sparkle {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    width: 60px;
+    height: 60px;
+    transform: translateX(-50%);
+    background-image: url('https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/svg/2728.svg');
+    background-size: cover;
+    animation: sparkle 1.2s ease-out forwards;
+    opacity: 0;
+    pointer-events: none;
+}
+
+@keyframes sparkle {
+    0% { transform: translateX(-50%) scale(0.5); opacity: 0; }
+    50% { transform: translateX(-50%) scale(1.2); opacity: 1; }
+    100% { transform: translateX(-50%) scale(0); opacity: 0; }
+}
+
+.back {
+    display: inline-block;
+    margin-top: 20px;
+    color: #2D9CDB;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.back:hover {
+    color: #1b6ea8;
+}
+
+
+.container {
+    transition: transform 0.2s ease-in-out;
+    will-change: transform;
+}

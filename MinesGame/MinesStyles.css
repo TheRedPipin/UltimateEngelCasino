@@ -1,0 +1,236 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@400;600&display=swap');
+
+
+body {
+    font-family: 'Fredoka', sans-serif;
+    background: radial-gradient(circle at center, #e0f7fa 0%, #ccf2e7 100%);
+    color: #003b4a;
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.back {
+    color: white;
+}
+
+#multiText{
+    position: absolute;
+    top: 10%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    font-weight: bolder;
+    font-size: 60px;
+    color: #000;
+}
+
+#mapShell{
+    display: grid;
+    grid-template: "A B C D E";
+    gap: 10px;
+    position: absolute;
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.4); /* Add white background box with opacity */
+    padding: 20px; /* Add padding to the box */
+    border-radius: 10px; /* Add border radius to the box */
+}
+.mapSpot{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 40px;
+    background-color: #e0b02c; /* Change to a darker color */
+    color: #fff; /* Ensure text is visible */
+}
+
+#controls {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    max-width: 500px;
+    animation: pop-in 0.6s ease;
+    display: grid;
+    gap: 10px;
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    justify-items: center;
+    align-items: center;
+}
+
+
+#moneyText, #bombInput, #betInput, #startBtn, #resetBtn {
+    position: static;
+    transform: none;
+}
+
+#moneyText{
+    padding: 10px;
+    font-size: 32px;
+    font-weight: 900;
+    color: #e0b02c;
+}
+
+input[type="number"] {
+    padding: 10px;
+    font-size: 1em;
+    width: 220px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+    border: 2px solid #a0ded0;
+    background-color: #f0fbf9;
+    outline: none;
+    transition: 0.3s;
+}
+
+input[type="number"]:focus {
+    border-color: #27AE60;
+}
+
+button {
+    padding: 12px 24px;
+    font-size: 1em;
+    margin: 10px 8px;
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+    font-weight: bold;
+    background-color: #2D9CDB;
+    color: #fff;
+    box-shadow: 0 4px 0 #1b6ea8;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    background-color: #27AE60;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(1px);
+    box-shadow: none;
+}
+
+.mapSpot:disabled {
+    color: inherit;
+    opacity: 1;
+}
+
+@keyframes shake {
+    0% { transform: translate(1px, 1px) rotate(0deg); }
+    10% { transform: translate(-1px, -2px) rotate(-1deg); }
+    20% { transform: translate(-3px, 0px) rotate(1deg); }
+    30% { transform: translate(3px, 2px) rotate(0deg); }
+    40% { transform: translate(1px, -1px) rotate(1deg); }
+    50% { transform: translate(-1px, 2px) rotate(-1deg); }
+    60% { transform: translate(-3px, 1px) rotate(0deg); }
+    70% { transform: translate(3px, 1px) rotate(-1deg); }
+    80% { transform: translate(-1px, -1px) rotate(1deg); }
+    90% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.shake {
+    animation: shake 0.5s;
+    animation-iteration-count: 1;
+}
+
+#endBox {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    background-color: #fff;
+    border: 2px solid #000;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#endBox.visible {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+#endBox.win {
+    border-color: green;
+    background-color: #e0ffe0;
+}
+
+#endBox.lose {
+    border-color: red;
+    background-color: #ffe0e0;
+}
+
+#endBox h2 {
+    margin: 0 0 10px 0;
+    font-size: 40px;
+    color: #333;
+}
+
+#endBox p {
+    margin: 0;
+    font-size: 30px;
+    color: #666;
+}
+
+/* Mobile support */
+@media (max-width: 768px) {
+    #multiText {
+        font-size: 20px;
+        top: 10%;
+        left: 50%;
+    }
+
+    #mapShell {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 5px;
+        top: 30%;
+        left: 50%;
+    }
+
+    .mapSpot {
+        width: 50px;
+        height: 50px;
+    }
+
+    #controls {
+        top: 70%;
+        left: 50%;
+        width: 90%;
+    }
+
+    #moneyText {
+        font-size: 16px;
+    }
+
+    #bombInput, #betInput {
+        width: 100%;
+        height: 25px;
+    }
+
+    #startBtn, #resetBtn {
+        width: 100%;
+        height: 60px;
+    }
+}
+
+.back {
+    display: inline-block;
+    margin-top: 20px;
+    color: #2D9CDB;
+    text-decoration: none;
+    font-weight: bold;
+}

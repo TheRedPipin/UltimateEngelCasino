@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Keno Game</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Keno</h1>
+    <div class="balance">💎 Balance: <span id="balanceText">0</span></div>
+    <div class="controls">
+      <input type="number" id="betAmount" placeholder="Enter your bet" min="1" />
+      <button id="playBtn">Play</button>
+    </div>
+    <p>Select up to 10 numbers:</p>
+    <div id="kenoBoard" class="board"></div>
+    <div id="resultBox"></div>
+    <a onclick="returnToSender()" class="back">⬅ Back to Casino</a>
+  </div>
+  <script src="keno.js"></script>
+</body>
+</html>
